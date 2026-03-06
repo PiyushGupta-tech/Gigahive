@@ -1,0 +1,27 @@
+============================================
+  MAIN FOLDER – ALL FILES ADDED (visible in left sidebar)
+============================================
+
+This folder = your main project folder. Every file below is in it.
+In Cursor, the left sidebar shows this same folder.
+
+FILES IN THIS FOLDER:
+--------------------
+HTML (18): index.html, login.html, cart.html, checkout.html,
+  t-shirts-for-men.html, mens-shirts.html, polo-t-shirts.html,
+  womens-clothing.html, mens-pants.html, mens-joggers.html,
+  men-pyjamas.html, mens-cargo-pants.html, mens-jeans.html,
+  mens-boxers.html, shorts.html, combo-products.html,
+  mens-new-arrival.html, men-winterwear.html
+
+FOLDERS:
+  css/  → styles.css
+  js/   → app.js, products.js
+
+HELPER/DOCS: README.md, AUTO.md, FILES_MANIFEST.txt,
+  OPEN_IN_FINDER.html, this file (00_ALL_WEBSITE_FILES_HERE.txt)
+
+To run: Server is started from this folder.
+  Open http://localhost:8000/ in your browser.
+
+Full path: /Users/logixmall/Desktop/New Website

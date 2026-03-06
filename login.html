@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Log In / Sign Up - Beyoung</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    .login-page { min-height: 100vh; display: flex; align-items: center; justify-content: center; background: var(--color-gray-100, #f5f5f5); padding: 24px; }
+    .login-box { background: #fff; max-width: 420px; width: 100%; padding: 40px; border-radius: 12px; box-shadow: 0 4px 24px rgba(0,0,0,0.08); border: 1px solid var(--color-border, #e5e5e5); }
+    .login-box h1 { font-size: 24px; margin-bottom: 8px; color: #000; }
+    .login-box p { color: var(--color-gray-500, #757575); font-size: 14px; margin-bottom: 24px; }
+    .login-box .form-group { margin-bottom: 16px; }
+    .login-box label { display: block; font-size: 14px; font-weight: 500; margin-bottom: 6px; color: #212121; }
+    .login-box input { width: 100%; padding: 12px 14px; font-size: 15px; border: 1px solid var(--color-border); border-radius: 6px; font-family: inherit; }
+    .login-box input:focus { outline: none; border-color: #000; }
+    .login-box .btn-submit { width: 100%; padding: 14px; background: #000; color: #fff; border: none; border-radius: 6px; font-size: 15px; font-weight: 600; cursor: pointer; font-family: inherit; margin-top: 8px; }
+    .login-box .btn-submit:hover { background: #333; }
+    .login-box .back { display: inline-block; margin-top: 20px; font-size: 14px; color: var(--color-gray-700); text-decoration: underline; }
+    .login-box .back:hover { color: #000; }
+    .login-tabs { display: flex; gap: 0; margin-bottom: 24px; border-bottom: 1px solid var(--color-border); }
+    .login-tabs a { flex: 1; text-align: center; padding: 12px; font-weight: 500; color: var(--color-gray-500); border-bottom: 2px solid transparent; }
+    .login-tabs a.active { color: #000; border-bottom-color: #000; }
+    .login-tabs a:hover { color: #000; }
+    .login-tab-content { display: none; }
+    .login-tab-content.active { display: block; }
+  </style>
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-box">
+      <a href="index.html" class="back">← Back to shopping</a>
+      <h1>Welcome to Beyoung</h1>
+      <p>Log in or create an account to continue.</p>
+      <div class="login-tabs">
+        <a href="#" class="active" data-tab="login">Log In</a>
+        <a href="#" data-tab="signup">Sign Up</a>
+      </div>
+      <div id="login-form" class="login-tab-content active">
+        <form id="form-login">
+          <div class="form-group">
+            <label for="login-email">Email or Mobile</label>
+            <input type="text" id="login-email" placeholder="Enter email or mobile" required>
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input type="password" id="login-password" placeholder="Password" required>
+          </div>
+          <button type="submit" class="btn-submit">Log In</button>
+        </form>
+      </div>
+      <div id="signup-form" class="login-tab-content">
+        <form id="form-signup">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" placeholder="Your name" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" placeholder="Email" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-mobile">Mobile</label>
+            <input type="tel" id="signup-mobile" placeholder="10-digit mobile" required>
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="Create password" required>
+          </div>
+          <button type="submit" class="btn-submit">Create Account</button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+  <script>
+    (function() {
+      var USER_KEY = 'beyoung_user';
+      function setUser(user) {
+        try { localStorage.setItem(USER_KEY, user ? JSON.stringify(user) : ''); } catch (e) {}
+      }
+      var tabs = document.querySelectorAll('.login-tabs a');
+      var loginForm = document.getElementById('login-form');
+      var signupForm = document.getElementById('signup-form');
+      tabs.forEach(function(t) {
+        t.addEventListener('click', function(e) {
+          e.preventDefault();
+          tabs.forEach(function(x) { x.classList.remove('active'); });
+          this.classList.add('active');
+          if (this.getAttribute('data-tab') === 'login') {
+            loginForm.classList.add('active');
+            signupForm.classList.remove('active');
+          } else {
+            signupForm.classList.add('active');
+            loginForm.classList.remove('active');
+          }
+        });
+      });
+      document.getElementById('form-login').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var email = document.getElementById('login-email').value.trim();
+        var password = document.getElementById('login-password').value;
+        setUser({ email: email, name: email.split('@')[0], loggedIn: true });
+        window.location.href = document.referrer && document.referrer.indexOf('login') === -1 ? document.referrer : 'index.html';
+      });
+      document.getElementById('form-signup').addEventListener('submit', function(e) {
+        e.preventDefault();
+        var name = document.getElementById('signup-name').value.trim();
+        var email = document.getElementById('signup-email').value.trim();
+        var mobile = document.getElementById('signup-mobile').value.trim();
+        setUser({ name: name, email: email, mobile: mobile, loggedIn: true });
+        window.location.href = 'index.html';
+      });
+    })();
+  </script>
+</body>
+</html>

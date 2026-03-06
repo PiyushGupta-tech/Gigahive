@@ -1,0 +1,40 @@
+# Main project folder – all HTML, CSS, JavaScript (Beyoung replica)
+# This folder is the complete project. Copy it to run the site. Last updated: 2026-03-02
+
+## Visible helper files
+00_ALL_WEBSITE_FILES_HERE.txt   (open this if files don't show)
+OPEN_IN_FINDER.html
+
+## HTML (18 pages)
+index.html
+login.html
+cart.html
+checkout.html
+t-shirts-for-men.html
+mens-shirts.html
+polo-t-shirts.html
+womens-clothing.html
+mens-pants.html
+mens-joggers.html
+men-pyjamas.html
+mens-cargo-pants.html
+mens-jeans.html
+mens-boxers.html
+shorts.html
+combo-products.html
+mens-new-arrival.html
+men-winterwear.html
+
+## CSS
+css/styles.css
+
+## JavaScript
+js/app.js
+js/products.js
+
+## Docs
+AUTO.md
+FILES_MANIFEST.txt
+
+---
+Total: 22 files. To run: open index.html in browser or use "python3 -m http.server 8000" in this folder, then visit http://localhost:8000
