@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Checkout - Beyoung</title>
+  <title>Checkout - Gigahive</title>
   <link rel="stylesheet" href="css/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <style>
     .checkout-page { padding: 32px 0 64px; max-width: 640px; margin: 0 auto; }
-    .checkout-page h1 { font-size: 28px; margin-bottom: 24px; }
-    .checkout-summary { border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin-bottom: 24px; }
-    .checkout-summary .row { display: flex; justify-content: space-between; margin-bottom: 12px; }
-    .checkout-summary .total { font-size: 18px; font-weight: 700; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--color-border); }
-    .btn-place-order { display: block; width: 100%; padding: 14px; background: #000; color: #fff; text-align: center; font-weight: 600; border-radius: 6px; border: none; font-size: 16px; cursor: pointer; font-family: inherit; }
-    .btn-place-order:hover { background: #333; }
+    .checkout-page h1 { font-size: 28px; margin-bottom: 24px; color: var(--color-gray-900); }
+    .checkout-summary { border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin-bottom: 24px; background: linear-gradient(180deg, #18181c 0%, #121214 100%); box-shadow: inset 0 1px 0 rgba(255,255,255,0.04); }
+    .checkout-summary .row { display: flex; justify-content: space-between; margin-bottom: 12px; color: var(--color-gray-600); }
+    .checkout-summary .total { font-size: 18px; font-weight: 700; margin-top: 16px; padding-top: 16px; border-top: 1px solid var(--color-border); color: var(--color-gray-900); }
+    .btn-place-order { display: block; width: 100%; padding: 14px; background: var(--gloss-cta); color: #0a0a0c; text-align: center; font-weight: 600; border-radius: 6px; border: 1px solid rgba(255,255,255,0.25); font-size: 16px; cursor: pointer; font-family: inherit; box-shadow: inset 0 1px 0 rgba(255,255,255,0.45); }
+    .btn-place-order:hover { background: var(--gloss-cta-hover); }
     .secure-note { text-align: center; font-size: 13px; color: var(--color-gray-500); margin-top: 16px; }
   </style>
 </head>
@@ -24,7 +24,7 @@
   </div>
   <header class="header">
     <div class="header-inner container">
-      <a href="index.html" class="logo">Beyoung</a>
+      <a href="index.html" class="logo">GIGAHIVE</a>
       <nav class="main-nav">
         <span class="nav-dropdown">
           <a href="t-shirts-for-men.html" class="nav-item">Topwear ▾</a>
@@ -39,17 +39,17 @@
           <a href="mens-bottomwear.html" class="nav-item">Bottomwear ▾</a>
           <div class="dropdown-menu">
             <a href="mens-pants.html">Trousers for Men</a>
-            <a href="mens-joggers.html">Joggers for Men</a>
-            <a href="men-pyjamas.html">Pyjamas for Men</a>
-            <a href="mens-cargo-pants.html">Cargo Pants</a>
+
+
+
             <a href="mens-jeans.html">Jeans for Men</a>
-            <a href="mens-boxers.html">Boxers for Men</a>
-            <a href="shorts.html">Shorts for Men</a>
+
+
           </div>
         </span>
         <a href="combo-products.html" class="nav-item">Combos</a>
         <a href="mens-new-arrival.html" class="nav-item">New Arrivals</a>
-        <a href="men-winterwear.html" class="nav-item">Winterwear</a>
+
       </nav>
       <div class="header-actions">
         <span id="header-auth"></span>
@@ -66,7 +66,7 @@
   <script>
     (function() {
       function formatPrice(n) { return '₹' + (n || 0).toLocaleString('en-IN'); }
-      var items = window.BeyoungApp.getCart();
+      var items = window.GigahiveApp.getCart();
       var wrap = document.getElementById('checkout-summary');
       if (!items.length) {
         wrap.innerHTML = '<p>Your cart is empty. <a href="index.html">Continue shopping</a>.</p>';
@@ -78,7 +78,7 @@
         '<div class="row total"><span>Total</span><span>' + formatPrice(total) + '</span></div>' +
         '<button type="button" class="btn-place-order" id="place-order">Place Order</button></div>';
       document.getElementById('place-order').addEventListener('click', function() {
-        window.BeyoungApp.saveCart([]);
+        window.GigahiveApp.saveCart([]);
         alert('Thank you! Your order has been placed. (Demo – no payment processed.)');
         window.location.href = 'index.html';
       });

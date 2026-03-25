@@ -1,7 +1,7 @@
-/* Beyoung - Cart & Auth (shared across pages) */
+/* Gigahive - Cart & Auth (shared across pages) */
 (function() {
-  var CART_KEY = 'beyoung_cart';
-  var USER_KEY = 'beyoung_user';
+  var CART_KEY = 'gigahive_cart';
+  var USER_KEY = 'gigahive_user';
 
   function getCart() {
     try {
@@ -139,7 +139,7 @@
     return '<div class="product-card">' +
       '<div class="img-wrap">' + badge + wishlist + '<img src="' + (p.img || '') + '" alt="' + (p.title || '') + '"></div>' +
       '<div class="info">' +
-        '<div class="product-brand">Beyoung</div>' +
+        '<div class="product-brand">Gigahive</div>' +
         '<div class="title">' + (p.title || '') + '</div>' +
         '<div class="product-rating">' + rating + ' ★ <span class="product-reviews">(' + (reviews >= 1000 ? (reviews/1000).toFixed(1) + 'k' : reviews) + ')</span></div>' +
         '<div class="price">' + formatPrice(p.price) + mrp + '</div>' +
@@ -155,7 +155,7 @@
       '</div></div>';
   }
 
-  window.BeyoungApp = {
+  window.GigahiveApp = {
     getCart: getCart,
     saveCart: saveCart,
     addToCart: addToCart,
@@ -172,11 +172,22 @@
   window.renderProductCard = renderProductCard;
 
   document.body.addEventListener('click', function(e) {
+    var searchBtn = e.target.closest('.header-search-btn');
+    if (searchBtn) {
+      e.preventDefault();
+      var wrap = searchBtn.closest('.header-search-wrap');
+      var input = wrap ? wrap.querySelector('.header-search-input') : null;
+      if (input) {
+        input.focus();
+        input.select();
+      }
+      return;
+    }
     var w = e.target.closest('.product-wishlist');
     if (w) {
       e.preventDefault();
       w.classList.toggle('active');
-      if (window.BeyoungApp && window.BeyoungApp.showToast) window.BeyoungApp.showToast(w.classList.contains('active') ? 'Added to wishlist' : 'Removed from wishlist');
+      if (window.GigahiveApp && window.GigahiveApp.showToast) window.GigahiveApp.showToast(w.classList.contains('active') ? 'Added to wishlist' : 'Removed from wishlist');
       return;
     }
     var sizeBtn = e.target.closest('.size-option');
@@ -197,8 +208,8 @@
       var size = sizeOpt ? sizeOpt.getAttribute('data-size') : 'M';
       var product = window.getProductById ? window.getProductById(pid) : null;
       if (product) {
-        window.BeyoungApp.addToCart(product, 1, size);
-        if (window.BeyoungApp.showToast) window.BeyoungApp.showToast('Product added to cart.');
+        window.GigahiveApp.addToCart(product, 1, size);
+        if (window.GigahiveApp.showToast) window.GigahiveApp.showToast('Product added to cart.');
       }
     }
   });

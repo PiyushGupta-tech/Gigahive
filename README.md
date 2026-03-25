@@ -1,4 +1,4 @@
-# Beyoung Replica – Main Project Folder
+# Gigahive Replica – Main Project Folder
 
 This folder contains **all** HTML, CSS, and JavaScript for the website. Everything runs from here.
 

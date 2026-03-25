@@ -1,4 +1,4 @@
-# Main project folder – all HTML, CSS, JavaScript (Beyoung replica)
+# Main project folder – all HTML, CSS, JavaScript (Gigahive replica)
 # This folder is the complete project. Copy it to run the site. Last updated: 2026-03-02
 
 ## Visible helper files

@@ -1,6 +1,6 @@
 # AUTO — Project index and change log
 
-**Project:** Beyoung.in replica (New Website)  
+**Project:** Gigahive.in replica (New Website)  
 **Last updated:** 2026-03-02
 
 ---
@@ -62,7 +62,7 @@ New Website/
 | mens-boxers         | mens-boxers.html       | 1001–1010        | 10    |
 | shorts              | shorts.html            | 1101–1108        | 8     |
 
-**Total products:** 175 (in `window.BEYOUNG_PRODUCTS` in `js/products.js`).
+**Total products:** 175 (in `window.GIGAHIVE_PRODUCTS` in `js/products.js`).
 
 ---
 
@@ -76,9 +76,9 @@ New Website/
 
 All HTML pages use the same header with these links. Homepage footer includes “Shop by category” with links to all 14 product pages.
 
-## 3.1. Official Beyoung.in URLs → local pages
+## 3.1. Official Gigahive.in URLs → local pages
 
-| Beyoung.in URL | Local page |
+| Gigahive.in URL | Local page |
 |----------------|------------|
 | /t-shirts-for-men | t-shirts-for-men.html |
 | /mens-shirts | mens-shirts.html |
@@ -100,9 +100,9 @@ All HTML pages use the same header with these links. Homepage footer includes �
 
 ## 4. Features and behaviour
 
-- **Cart:** `localStorage` key `beyoung_cart`; add/remove/update quantity; count in header.
-- **Auth:** `localStorage` key `beyoung_user`; login/signup on login.html; header shows Log In or user/Logout.
-- **Product images:** Unsplash placeholders (no copied Beyoung assets).
+- **Cart:** `localStorage` key `gigahive_cart`; add/remove/update quantity; count in header.
+- **Auth:** `localStorage` key `gigahive_user`; login/signup on login.html; header shows Log In or user/Logout.
+- **Product images:** Unsplash placeholders (no copied Gigahive assets).
 - **Category pages:** Breadcrumb, sidebar filters (UI only), Sort (Recommended, Price low/high), grid from `getProductsByCategorySlug(slug)`.
 - **Checkout:** Order summary; “Place Order” clears cart and redirects to index.
 
