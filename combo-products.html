@@ -4,8 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Buy Combos For Men Online At Best Prices In India | Gigahive</title>
-  <link rel="stylesheet" href="css/styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=20260337">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <div class="top-bar"><p>Free Shipping Sitewide on Every Order, Don't Miss Out!!</p></div>
@@ -56,6 +56,10 @@
     </section>
     <div class="container category-page-inner">
     <nav class="breadcrumb"><a href="index.html">HOME</a><span>›</span><span>Combos</span></nav>
+    <div class="category-summer-banner category-promo-banner">
+      <h2 class="hero-title-summer">Combo Savings</h2>
+      <p class="category-summer-tagline">Pick more, pay less on bundles</p>
+    </div>
     <div class="category-layout">
       <aside class="category-sidebar">
         <h3>Filter</h3>
@@ -76,8 +80,8 @@
     </div>
     </div>
   </main>
-  <footer class="footer"><div class="container"><div class="footer-grid"><div><h4>Support</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns &amp; Exchange</a></li></ul></div><div><h4>Company</h4><ul><li><a href="#">About Us</a></li></ul></div></div><div class="footer-bottom"><p>Copyright © 2026 Gigahive Folks Pvt Ltd. All rights reserved.</p></div></div></footer>
-  <script src="js/products.js"></script><script src="js/app.js"></script>
+  <footer class="footer"><div class="container"><div class="footer-grid"><div><h4>Support</h4><ul><li><a href="#">Track Order</a></li><li><a href="#">Returns &amp; Exchange</a></li></ul></div><div><h4>Company</h4><ul><li><a href="#">About Us</a></li></ul></div></div><div class="footer-bottom"><p>2026 Gigahive Folks Pvt Ltd. All rights reserved.</p></div></div></footer>
+  <script src="js/products.js?v=20260337"></script><script src="js/app.js?v=20260337"></script>
   <script>
 (function(){var CATEGORY='combos';function formatPrice(n){return '₹'+(n||0).toLocaleString('en-IN');}function renderCard(p){var mrp=p.mrp?'<span class="mrp">'+formatPrice(p.mrp)+'</span>':'';return '<div class="product-card"><div class="img-wrap"><img src="'+(p.img||'')+'" alt="'+(p.title||'')+'"></div><div class="info"><div class="title">'+(p.title||'')+'</div><div class="price">'+formatPrice(p.price)+mrp+'</div><button type="button" class="btn-add-cart" data-product-id="'+p.id+'">Add to Cart</button></div></div>';}function render(){var products=window.getProductsByCategorySlug(CATEGORY);var sort=document.getElementById('sort-select').value;if(sort==='price-low')products.sort(function(a,b){return a.price-b.price;});else if(sort==='price-high')products.sort(function(a,b){return b.price-a.price;});document.getElementById('category-products').innerHTML=products.map(renderCard).join('');document.querySelectorAll('#category-products .btn-add-cart').forEach(function(btn){btn.addEventListener('click',function(){var p=window.getProductById(this.getAttribute('data-product-id'));if(p){window.GigahiveApp.addToCart(p,1);window.GigahiveApp.showToast('Product Added to your cart.');}});});}document.getElementById('sort-select').addEventListener('change',render);render();})();
   </script>

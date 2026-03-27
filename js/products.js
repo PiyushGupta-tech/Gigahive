@@ -69,7 +69,6 @@ window.GIGAHIVE_PRODUCTS = [
   { id: 209, title: 'Black Shirt for Men', price: 699, category: 'mens-shirts' },
   /* Trousers / Mens Pants */
   { id: 503, title: 'Beige Solid Korean Pants Korean Pants', price: 998, mrp: 1999, category: 'mens-pants' },
-  { id: 504, title: 'Black Solid Korean Pants Korean Pants', price: 998, mrp: 1999, category: 'mens-pants' },
   { id: 505, title: 'Khaki Side-Adjuster Cotton Slub Trousers', price: 1199, mrp: 3299, category: 'mens-pants' },
   { id: 512, title: 'Light Grey Stretch Gurkha Pants Gurkha Pants', price: 1299, mrp: 3299, category: 'mens-pants' },
   { id: 513, title: 'Beige Color Trouser', price: 699, category: 'mens-pants' },
@@ -190,6 +189,10 @@ if (checkShirtProduct) {
 var blackShirtProduct = window.GIGAHIVE_PRODUCTS.find(function(p) { return p.id === 209; });
 if (blackShirtProduct) {
   blackShirtProduct.img = 'https://stylequotient.co.in/cdn/shop/files/SS24SQPRUDENT_BLK_1.jpg?v=1715766861';
+}
+var koreanPantsBeigeProduct = window.GIGAHIVE_PRODUCTS.find(function(p) { return p.id === 503; });
+if (koreanPantsBeigeProduct) {
+  koreanPantsBeigeProduct.img = 'https://5.imimg.com/data5/ANDROID/Default/2022/10/UV/KY/UJ/107953350/product-jpeg.jpg';
 }
 var lightGreyGurkhaPantProduct = window.GIGAHIVE_PRODUCTS.find(function(p) { return p.id === 512; });
 if (lightGreyGurkhaPantProduct) {
